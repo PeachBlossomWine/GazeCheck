@@ -1,8 +1,8 @@
 _addon.name = 'Gaze_check'
-_addon.author = 'smd111/Kenshi'
+_addon.author = 'smd111/Kenshi - Modified by PBW'
 _addon.command = 'gazecheck'
 _addon.commands = {'gaze'}
-_addon.version = '2.03'
+_addon.version = '5.16'
 
 require 'luau'
 require('vectors')
