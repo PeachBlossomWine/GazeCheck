@@ -27,17 +27,14 @@ gaze_attacks = {[284]="Cold Stare",[292]="Blank Gaze",[370]="Baleful Gaze",[386]
 [2828]="Jettatura",[3031]="Sylvan Slumber",[3032]="Crushing Gaze",[3358]="Blank Gaze",[3760]="Beguiling Gaze",[3898]="Chaotic Eye",[3916]="Jettatura",
 
 [4096]="Pain Sync",
-
 [4192]="Fatal Allure",
-
 [3978]="Raqs Baladi Dance",[3975]="Edifying Dance",[3977]="Noxious Dance",
-[3020]="Blistering Roar",
 }
 
-perm_gaze_attacks = {[2156]="Grim Glower",[2392]="Oppressive Glare",[2776]="Shah Mat",[4121]="Repulsor",[3020]="Blistering Roar"}
+perm_gaze_attacks = {[2156]="Grim Glower",[2392]="Oppressive Glare",[2776]="Shah Mat",[4121]="Repulsor",}
 --,[3980]="Lateral Slice"
 --,[3981]="Vertical Slice"
-perm_gaze_control = {["Peiste"]={skills=T{2156, 2392},delay=3,ender=T{4}},["Caturae"]={skills=T{2776},delay=6,ender=T{4,6}},}
+perm_gaze_control = {["Peiste"]={skills=T{2156, 2392},delay=3,ender=T{4}},["Caturae"]={skills=T{2776},delay=6,ender=T{4,6}},["Quadav"]={skills=T{4121},delay=2,ender=T{4}},["Goblin"]={skills=T{4121},delay=2,ender=T{4}},["Orc"]={skills=T{4121},delay=2,ender=T{4}},}
 --["Tonberry"]={skills=T{3980},delay=3,ender=T{4}},
 
 gaze,perm_gaze,test_mode,trigered_actor,perm_trigered_actor,mob_type = false,false,false,0,0,""
