@@ -1,5 +1,5 @@
 _addon.name = 'Gaze_check'
-_addon.author = 'smd111/Kenshi - Modified by PBW'
+_addon.author = 'smd111/Kenshi - Modified by K'
 _addon.command = 'gazecheck'
 _addon.commands = {'gaze'}
 _addon.version = '5.16'
@@ -28,7 +28,8 @@ gaze_attacks = {[284]="Cold Stare",[292]="Blank Gaze",[370]="Baleful Gaze",[386]
 
 [4096]="Pain Sync",
 [4192]="Fatal Allure",
-[3978]="Raqs Baladi Dance",[3975]="Edifying Dance",[3977]="Noxious Dance",
+[3968]="Petrifaction",[3975]="Petrifying Dance",[3977]="Venomous Dance",[3978]="Raqs Baladi",
+
 }
 
 perm_gaze_attacks = {[2156]="Grim Glower",[2392]="Oppressive Glare",[2776]="Shah Mat",[4121]="Repulsor",}
