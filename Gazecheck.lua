@@ -38,11 +38,11 @@ gaze_attacks = {[284]="Cold Stare",[292]="Blank Gaze",[370]="Baleful Gaze",[386]
 
 }
 
-perm_gaze_attacks = {[2156]="Grim Glower",[2392]="Oppressive Glare",[2776]="Shah Mat",[4121]="Repulsor",} --[3026]="Incinerating Lahar",
---,[3980]="Lateral Slice"
---,[3981]="Vertical Slice"
-perm_gaze_control = {["Peiste"]={skills=T{2156, 2392},delay=3,ender=T{4}},["Caturae"]={skills=T{2776},delay=6,ender=T{4,6}},["Quadav"]={skills=T{4121},delay=2,ender=T{4}},["Goblin"]={skills=T{4121},delay=2,ender=T{4}},["Orc"]={skills=T{4121},delay=2,ender=T{4}},}
---["Tonberry"]={skills=T{3980},delay=3,ender=T{4}},
+perm_gaze_attacks = {[3980]="Fettering Tackle",[3981]="Extirpate",[2156]="Grim Glower",[2392]="Oppressive Glare",[2776]="Shah Mat",[4121]="Repulsor",} --[3026]="Incinerating Lahar",
+--,[3980]="Fettering Tackle"
+--,[3981]="Extirpate"
+perm_gaze_control = {["Tonberry"]={skills=T{3980, 3981},delay=3,ender=T{4}},["Peiste"]={skills=T{2156, 2392},delay=3,ender=T{4}},["Caturae"]={skills=T{2776},delay=6,ender=T{4,6}},["Quadav"]={skills=T{4121},delay=2,ender=T{4}},["Goblin"]={skills=T{4121},delay=2,ender=T{4}},["Orc"]={skills=T{4121},delay=2,ender=T{4}},}
+
 
 gaze,perm_gaze,test_mode,trigered_actor,perm_trigered_actor,mob_type = false,false,false,0,0,""
 
@@ -121,9 +121,10 @@ function check_target_action(packet)
         if string.match(i, 'Target %d+ Action %d+ Param') then
 		--windower.add_to_chat(7,"Mob ability/spell ID = "..tostring(v))
             if settings.auto_gaze and gaze_attacks[v] then
-				windower.add_to_chat(7,"Mob ability/spell ID = "..tostring(v))
+				--windower.add_to_chat(7,"Mob ability/spell ID = "..tostring(v))
                 return true
             elseif settings.auto_perm_gaze and perm_gaze_attacks[v] then
+				windower.add_to_chat(7,"Mob ability/spell ID = "..tostring(v))
                 for mob,tbl in pairs(perm_gaze_control) do
                     if tbl.skills:contains(v) then
                         mob_type = mob
@@ -224,6 +225,9 @@ function move_from_to()
 		end
 		windower.ffxi.run(false)
 	end
+end
+function test()
+windower.ffxi.turn:schedule(1,(getAngle()+180):radian())
 end
 
 function haveBuff(...)
@@ -330,6 +334,8 @@ windower.register_event('addon command', function(input, ...)
 	elseif cmd == 'testu' then
 			__weakened = false
 			move_from_to()
+	elseif cmd == 'test' then
+		test()
 	end
 	
     if cmd then
